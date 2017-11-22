@@ -31,6 +31,8 @@ RUN npm install --global nodemon --global react-scripts --global foreman
 
 RUN mkdir -p /opt/mern.js
 ADD Procfile /opt/mern.js/Procfile
+ADD start.sh /scripts/start.sh
+RUN chmod +x /scripts/start.sh
 WORKDIR /opt/mern.js
 
-CMD nf start -p 3000
+CMD ["/scripts/start.sh"]
